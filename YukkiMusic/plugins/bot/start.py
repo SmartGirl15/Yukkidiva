@@ -197,8 +197,8 @@ async def start_comm(client, message: Message, _):
             OWNER = None
         out = private_panel(_, app.username, OWNER)
         if config.START_IMG_URL:            
-                 first_name = update.effective_user.first_name
-                 lol = update.effective_message.reply_text(
+                 first_name = edit.effective_user.first_name
+                 lol = edit.effective_message.reply_text(
                      PM_START_TEX.format(usr.first_name), parse_mode=ParseMode.MARKDOWN
                  )
                  time.sleep(0.4)
@@ -209,10 +209,10 @@ async def start_comm(client, message: Message, _):
                  lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ... ")
                  time.sleep(0.4)
                  lol.delete()
-                 update.effective_message.reply_sticker(
+                 edit.effective_message.reply_sticker(
                      "CAACAgQAAxkBAAJ312NrtDK9pz0trTxqAAGXSH39kMOXfwACOgsAAv7zOFBhzcbZI89H-SsE"
                  )
-                 update.effective_message.reply_text(   
+                 edit.effective_message.reply_text(   
                     message.reply_photo(
                     photo=config.START_IMG_URL,
                     caption=_["start_2"].format(
