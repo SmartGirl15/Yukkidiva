@@ -197,7 +197,7 @@ async def start_comm(client, message: Message, _):
             OWNER = None
         out = private_panel(_, app.username, OWNER)
         if config.START_IMG_URL:            
-                 first_name = mystic.edit_effective_user.first_name
+                 await mystic.edit_effective_user.first_name
                  lol = mystic.edit_effective_message.reply_text(
                      PM_START_TEX.format(usr.first_name), parse_mode=ParseMode.MARKDOWN
                  )
@@ -209,7 +209,7 @@ async def start_comm(client, message: Message, _):
                  lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ... ")
                  time.sleep(0.4)
                  lol.delete()
-                 mystic.edit_effective_message.reply_sticker(
+                 return await mystic.edit_effective_message.reply_sticker(
                      "CAACAgQAAxkBAAJ312NrtDK9pz0trTxqAAGXSH39kMOXfwACOgsAAv7zOFBhzcbZI89H-SsE"
                  )
                  mystic.edit_effective_message.reply_text(   
