@@ -196,8 +196,7 @@ async def start_comm(client, message: Message, _):
         except:
             OWNER = None
         out = private_panel(_, app.username, OWNER)
-        if config.START_IMG_URL:
-            try:
+        if config.START_IMG_URL:            
                  first_name = update.effective_user.first_name
                  lol = update.effective_message.reply_text(
                      PM_START_TEX.format(usr.first_name), parse_mode=ParseMode.MARKDOWN
@@ -221,12 +220,7 @@ async def start_comm(client, message: Message, _):
                     ),
                     reply_markup=InlineKeyboardMarkup(out),                    
                 )
-               )                   
-            except:
-                await message.reply_text(
-                    _["start_2"].format(config.MUSIC_BOT_NAME),
-                    reply_markup=InlineKeyboardMarkup(out),
-                )
+               )                     
         else:
             await message.reply_text(
                 _["start_2"].format(config.MUSIC_BOT_NAME),
