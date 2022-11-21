@@ -201,10 +201,10 @@ async def start_comm(client, message: Message, _):
                         config.MUSIC_BOT_NAME
                     ),
                     reply_markup=InlineKeyboardMarkup(out),
-                    first_name = update.effective_user.first_name
-                      update.effective_message.reply_sticker(
-                      "CAACAgUAAxkBAAJYsmLWRvm70cE-mmxSNCovEf4v1ueJAAIcCAACbMK4VuL4EmZEkq8WKQQ"
-                      ),    
+                    first_name = update.effective_user.first_name,
+                    update.effective_message.reply_sticker(
+                        "CAACAgUAAxkBAAJYsmLWRvm70cE-mmxSNCovEf4v1ueJAAIcCAACbMK4VuL4EmZEkq8WKQQ"
+                    ),    
                 )
             except:
                 await message.reply_text(
