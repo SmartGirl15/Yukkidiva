@@ -34,6 +34,9 @@ from YukkiMusic.utils.inline import (help_pannel, private_panel,
 
 loop = asyncio.get_running_loop()
 
+PM_START_TEX = """
+ʜᴇʟʟᴏ `{}`, ʜᴏᴡ ᴀʀᴇ ʏᴏᴜ \nᴡᴀɪᴛ ᴀ ᴍᴏᴍᴇɴᴛ ʙʀᴏ . . . 
+"""
 
 @app.on_message(
     filters.command(get_command("START_COMMAND"))
@@ -195,17 +198,30 @@ async def start_comm(client, message: Message, _):
         out = private_panel(_, app.username, OWNER)
         if config.START_IMG_URL:
             try:
-                await message.reply_photo(
+                 first_name = update.effective_user.first_name
+                 lol = update.effective_message.reply_text(
+                     PM_START_TEX.format(usr.first_name), parse_mode=ParseMode.MARKDOWN
+                 )
+                 time.sleep(0.4)
+                 lol.edit_text("🎊")
+                 time.sleep(0.5)
+                 lol.edit_text("⚡")
+                 time.sleep(0.3)
+                 lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ... ")
+                 time.sleep(0.4)
+                 lol.delete()
+                 update.effective_message.reply_sticker(
+                     "CAACAgQAAxkBAAJ312NrtDK9pz0trTxqAAGXSH39kMOXfwACOgsAAv7zOFBhzcbZI89H-SsE"
+                 )
+                 update.effective_message.reply_text(   
+                    message.reply_photo(
                     photo=config.START_IMG_URL,
                     caption=_["start_2"].format(
                         config.MUSIC_BOT_NAME
                     ),
-                    reply_markup=InlineKeyboardMarkup(out),
-                    first_name = update.effective_user.first_name,
-                    update.effective_message.reply_sticker(
-                        "CAACAgUAAxkBAAJYsmLWRvm70cE-mmxSNCovEf4v1ueJAAIcCAACbMK4VuL4EmZEkq8WKQQ"
-                    ),    
+                    reply_markup=InlineKeyboardMarkup(out),                    
                 )
+               )                   
             except:
                 await message.reply_text(
                     _["start_2"].format(config.MUSIC_BOT_NAME),
