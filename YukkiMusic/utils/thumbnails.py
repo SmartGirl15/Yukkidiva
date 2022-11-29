@@ -94,6 +94,7 @@ async def gen_thumb(videoid):
         draw.text(
             (10, 10), f"{MUSIC_BOT_NAME}", fill="white", font=font
         )
+        draw.polygon(((200, 200), (300, 100), (250, 50)), fill=(255, 255, 0), outline=(0, 0, 0))
         draw.text(
             (50, 1000),
             "Enjoy the song!",
