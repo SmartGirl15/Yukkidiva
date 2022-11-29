@@ -111,6 +111,16 @@ async def gen_thumb(videoid):
             font=font2,
         )
         for line in para:
+            if j == 2:
+                j += 1
+                draw.text(
+                    (50, 750),
+                    f"{line}",
+                    fill="white",
+                    stroke_width=1,
+                    stroke_fill="black",
+                    font=font3,
+                )
             if j == 1:
                 j += 1
                 draw.text(
