@@ -80,7 +80,7 @@ async def gen_thumb(videoid):
         x2 = Xcenter + 400
         y2 = Ycenter + 400
         logo = youtube.crop((x1, y1, x2, y2))
-        logo.thumbnail((500, 500), Image.ANTIALIAS)
+        logo.thumbnail((400, 400), Image.ANTIALIAS)
         logo = ImageOps.expand(logo, border=10, fill="midnightblue")
         background.paste(logo, (110, 100))
         draw = ImageDraw.Draw(background)
@@ -103,7 +103,7 @@ async def gen_thumb(videoid):
             font=font2,
         ) 
         draw.text(
-            (100, 650),
+            (100, 550),
             "PLAYING NOW!",
             fill="white",
             stroke_width=2,
@@ -114,7 +114,7 @@ async def gen_thumb(videoid):
             if j == 1:
                 j += 1
                 draw.text(
-                    (50, 840),
+                    (50, 790),
                     f"{line}",
                     fill="white",
                     stroke_width=1,
@@ -124,7 +124,7 @@ async def gen_thumb(videoid):
             if j == 0:
                 j += 1
                 draw.text(
-                    (50, 780),
+                    (50, 730),
                     f"{line}",
                     fill="white",
                     stroke_width=1,
