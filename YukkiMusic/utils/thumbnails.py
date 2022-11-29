@@ -114,7 +114,7 @@ async def gen_thumb(videoid):
             if j == 1:
                 j += 1
                 draw.text(
-                    (50, 790),
+                    (50, 840),
                     f"{line}",
                     fill="white",
                     stroke_width=1,
@@ -124,7 +124,7 @@ async def gen_thumb(videoid):
             if j == 0:
                 j += 1
                 draw.text(
-                    (50, 730),
+                    (50, 780),
                     f"{line}",
                     fill="white",
                     stroke_width=1,
