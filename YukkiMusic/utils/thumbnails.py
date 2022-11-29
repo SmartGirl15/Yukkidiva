@@ -21,11 +21,11 @@ from config import MUSIC_BOT_NAME, YOUTUBE_IMG_URL
 
 
 def changeImageSize(maxWidth, maxHeight, image):
-    heightRatio = maxWidth / image.size[0]
-    widthRatio = maxHeight / image.size[1]
+    widthRatio = maxWidth / image.size[0]
+    heightRatio = maxHeight / image.size[1]
     newWidth = int(widthRatio * image.size[0])
     newHeight = int(heightRatio * image.size[1])
-    newImage = image.resize((newWidth, newHeight))
+    newImage = image.resize((newHeight, newWidth))
     return newImage
 
 
