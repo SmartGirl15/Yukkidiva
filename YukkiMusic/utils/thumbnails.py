@@ -89,12 +89,11 @@ async def gen_thumb(videoid):
         font3 = ImageFont.truetype("assets/font.ttf", 50)
         jokerman = ImageFont.truetype("assets/font2.ttf", 30)
         name_font = ImageFont.truetype("assets/font.ttf", 35)
-        para = textwrap.wrap(title, width=32)
+        para = textwrap.wrap(title, width=30)
         j = 0
         draw.text(
             (10, 10), f"{MUSIC_BOT_NAME}", fill="white", font=font
-        )
-        draw.polygon(((200, 200), (300, 100), (250, 50)), fill=(255, 255, 0), outline=(0, 0, 0))
+        )        
         draw.text(
             (50, 1000),
             "Enjoy the song!",
