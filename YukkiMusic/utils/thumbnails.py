@@ -80,14 +80,14 @@ async def gen_thumb(videoid):
         x2 = Xcenter + 400
         y2 = Ycenter + 400
         logo = youtube.crop((x1, y1, x2, y2))
-        logo.thumbnail((300, 300), Image.ANTIALIAS)
+        logo.thumbnail((400, 400), Image.ANTIALIAS)
         logo = ImageOps.expand(logo, border=10, fill="midnightblue")
         background.paste(logo, (200, 150))
         draw = ImageDraw.Draw(background)
         font = ImageFont.truetype("assets/font2.ttf", 40)
         font2 = ImageFont.truetype("assets/font2.ttf", 70)
         font3 = ImageFont.truetype("assets/font.ttf", 50)
-        jokerman = ImageFont.truetype("assets/font2.ttf", 30)
+        jokerman = ImageFont.truetype("assets/font2.ttf", 400)
         name_font = ImageFont.truetype("assets/font.ttf", 35)
         para = textwrap.wrap(title, width=25)
         j = 0
@@ -95,7 +95,7 @@ async def gen_thumb(videoid):
             (10, 10), f"{MUSIC_BOT_NAME}", fill="white", font=font
         )        
         draw.text(
-            (50, 1000),
+            (150, 1100),
             "Enjoy the song!",
             fill="white",
             stroke_width=2,
@@ -103,7 +103,7 @@ async def gen_thumb(videoid):
             font=font2,
         ) 
         draw.text(
-            (50, 500),
+            (100, 600),
             "PLAYING NOW!",
             fill="white",
             stroke_width=2,
@@ -114,7 +114,7 @@ async def gen_thumb(videoid):
             if j == 1:
                 j += 1
                 draw.text(
-                    (50, 690),
+                    (50, 790),
                     f"{line}",
                     fill="white",
                     stroke_width=1,
@@ -124,7 +124,7 @@ async def gen_thumb(videoid):
             if j == 0:
                 j += 1
                 draw.text(
-                    (50, 630),
+                    (50, 730),
                     f"{line}",
                     fill="white",
                     stroke_width=1,
@@ -133,7 +133,7 @@ async def gen_thumb(videoid):
                 )
 
         draw.text(
-            (100, 800),
+            (100, 900),
             f"Views : {views[:23]}",
             (255, 255, 255),
             font=jokerman,
@@ -141,7 +141,7 @@ async def gen_thumb(videoid):
             stroke_fill="black",
         )
         draw.text(
-            (100, 850),
+            (100, 950),
             f"Duration : {duration[:23]} Mins",
             (255, 255, 255),
             font=jokerman,
@@ -149,7 +149,7 @@ async def gen_thumb(videoid):
             stroke_fill="black",
         )
         draw.text(
-            (100, 900),
+            (100, 1000),
             f"Channel : {channel}",
             (255, 255, 255),
             font=jokerman,
