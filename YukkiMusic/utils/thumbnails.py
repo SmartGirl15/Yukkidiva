@@ -80,14 +80,14 @@ async def gen_thumb(videoid):
         x2 = Xcenter + 400
         y2 = Ycenter + 400
         logo = youtube.crop((x1, y1, x2, y2))
-        logo.thumbnail((400, 400), Image.ANTIALIAS)
+        logo.thumbnail((500, 500), Image.ANTIALIAS)
         logo = ImageOps.expand(logo, border=10, fill="midnightblue")
-        background.paste(logo, (200, 150))
+        background.paste(logo, (100, 150))
         draw = ImageDraw.Draw(background)
         font = ImageFont.truetype("assets/font2.ttf", 40)
         font2 = ImageFont.truetype("assets/font2.ttf", 70)
         font3 = ImageFont.truetype("assets/font.ttf", 50)
-        jokerman = ImageFont.truetype("assets/font2.ttf", 400)
+        jokerman = ImageFont.truetype("assets/font2.ttf", 40)
         name_font = ImageFont.truetype("assets/font.ttf", 35)
         para = textwrap.wrap(title, width=25)
         j = 0
