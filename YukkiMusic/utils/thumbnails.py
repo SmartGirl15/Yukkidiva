@@ -83,6 +83,7 @@ async def gen_thumb(videoid):
         logo = ImageOps.expand(logo, border=10, fill="midnightblue")
         background.paste(logo, (300, 150))
         draw = ImageDraw.Draw(background)
+        draw.polygon(((200, 200), (300, 100), (250, 50)), fill=(255, 255, 0), outline=(0, 0, 0))
         font = ImageFont.truetype("assets/font2.ttf", 40)
         font2 = ImageFont.truetype("assets/font2.ttf", 70)
         font3 = ImageFont.truetype("assets/font.ttf", 40)
