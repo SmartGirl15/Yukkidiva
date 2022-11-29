@@ -82,12 +82,12 @@ async def gen_thumb(videoid):
         logo = youtube.crop((x1, y1, x2, y2))
         logo.thumbnail((400, 400), Image.ANTIALIAS)
         logo = ImageOps.expand(logo, border=10, fill="midnightblue")
-        background.paste(logo, (110, 100))
+        background.paste(logo, (170, 100))
         draw = ImageDraw.Draw(background)
         font = ImageFont.truetype("assets/font2.ttf", 40)
         font2 = ImageFont.truetype("assets/font2.ttf", 70)
-        font3 = ImageFont.truetype("assets/font.ttf", 50)
-        jokerman = ImageFont.truetype("assets/font2.ttf", 40)
+        font3 = ImageFont.truetype("assets/font.ttf", 40)
+        jokerman = ImageFont.truetype("assets/font2.ttf", 35)
         name_font = ImageFont.truetype("assets/font.ttf", 35)
         para = textwrap.wrap(title, width=25)
         j = 0
@@ -103,7 +103,7 @@ async def gen_thumb(videoid):
             font=font2,
         ) 
         draw.text(
-            (100, 550),
+            (100, 560),
             "PLAYING NOW!",
             fill="white",
             stroke_width=2,
